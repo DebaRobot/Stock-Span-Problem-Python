@@ -26,13 +26,13 @@ def nextsmallertoright(arr):
     result = []
     for i in range(len(arr) - 1, -1, -1):
         if stack.isEmpty():
-            result.append(-1)
+            result.append(len(arr))
             stack.push(arr[i])
         elif not stack.isEmpty():
             while (not stack.isEmpty() and arr[i] < stack.peek()):
                 stack.pop()
             if stack.isEmpty():
-                result.append(-1)
+                result.append(len(arr))
             else:
                 result.append(arr.index(stack.peek()))
         stack.push(arr[i])
